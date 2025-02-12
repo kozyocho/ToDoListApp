@@ -50,8 +50,10 @@ namespace ToDoListApp
             case "3":
               // タスクを完了にする（ID指定で更新）
               Console.Write("完了にするタスクのIDを入力してください: ");
+              // 入力された文字列を整数に変換し、その結果を completeIdに格納する
               if (int.TryParse(Console.ReadLine(), out int completeId))
               {
+                // 入力されたタスクのIDに該当する最初のタスクをデータベースから探し、見つかった場合はそのタスクをtaskに代入する
                 var task = db.ToDoItems.FirstOrDefault(t => t.Id == completeId);
                 if (task != null)
                 {
