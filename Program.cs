@@ -41,6 +41,11 @@ namespace ToDoListApp
             case "2":
               var items = db.ToDoItems.ToList();
               Console.WriteLine("現在のタスク一覧:");
+              // タスクがない場合はメッセージを表示
+              if (!items.Any())
+              {
+                Console.WriteLine("タスクはありません。");
+              }
               foreach (var item in items)
               {
                 Console.WriteLine($"ID: {item.Id}, タイトル: {item.Title}, 完了: {item.IsCompleted}");
