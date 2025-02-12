@@ -135,3 +135,4 @@
 /Users/shoheiyamasaki/projects/ToDoListApp/ToDoListApp/obj/Debug/net9.0/ToDoListApp.pdb
 /Users/shoheiyamasaki/projects/ToDoListApp/ToDoListApp/obj/Debug/net9.0/ToDoListApp.genruntimeconfig.cache
 /Users/shoheiyamasaki/projects/ToDoListApp/ToDoListApp/obj/Debug/net9.0/ref/ToDoListApp.dll
+/Users/shoheiyamasaki/projects/ToDoListApp/ToDoListApp/obj/Debug/net9.0/ToDoListApp.sourcelink.json
