@@ -20,8 +20,7 @@ namespace ToDoListApp
           Console.WriteLine("1. ToDo 項目の追加");
           Console.WriteLine("2. ToDo 項目の一覧表示");
           Console.WriteLine("3. タスクを完了にする");
-          Console.WriteLine("4. 完了タスクの削除");
-          Console.WriteLine("5. 終了");
+          Console.WriteLine("4. 終了");
           Console.Write("オプションを選択してください: ");
           string input = Console.ReadLine();
           Console.WriteLine();
@@ -56,7 +55,7 @@ namespace ToDoListApp
                 var task = db.ToDoItems.FirstOrDefault(t => t.Id == completeId);
                 if (task != null)
                 {
-                  task.IsCompleted = true;
+                  db.ToDoItems.Remove(task);
                   db.SaveChanges();
                   Console.WriteLine("タスクが完了にマークされました。");
                 }
@@ -72,21 +71,6 @@ namespace ToDoListApp
               break;
 
             case "4":
-              // 完了済みタスクを削除する
-              var completedTasks = db.ToDoItems.Where(t => t.IsCompleted).ToList();
-              if (completedTasks.Any())
-              {
-                db.ToDoItems.RemoveRange(completedTasks);
-                db.SaveChanges();
-                Console.WriteLine("完了タスクが削除されました。");
-              }
-              else
-              {
-                Console.WriteLine("削除する完了タスクはありません。");
-              }
-              break;
-
-            case "5":
               exit = true;
               Console.WriteLine("アプリケーションを終了します。");
               break;
